@@ -7,7 +7,7 @@ public class Activity9ArraySearch {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Tangalin, Michael Jan, R./1-BSIT-1");
-        Boolean loopagain = true;
+        
 
         String name[] = {"Ace", "Ben", "Cas", "Dan", "Eve", "Fei", "Gie", "Han", "Ivy", "Joe"};
         int age[] = {11, 22, 33, 44, 55, 66, 77, 88, 99, 100};
