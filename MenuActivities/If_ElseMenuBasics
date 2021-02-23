@@ -1,1 +1,67 @@
+package activity2;
+import java.util.Scanner;
+public class Activity2 {
 
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Michael Jan R. Tangalin");
+        System.out.println("1-BSIT-1");      
+        System.out.println("---MENU---");
+        System.out.println("1. Pizza");
+        System.out.println("2. Burger");
+        System.out.println("3. Fries");
+        System.out.print("Menu choice: ");
+        String menu = input.nextLine();
+        
+        if (menu.equals("1")){
+            System.out.println("---Variants---");
+            System.out.println("1. Cheese");
+            System.out.println("2. Pepperoni");
+            System.out.println("3. Hawaiian");
+            System.out.print("Variant Choice: ");
+            int pizza = input.nextInt();
+            if(pizza == 1){
+                System.out.println("Cheese Pizza");
+            }else if(pizza == 2){
+                System.out.println("Pepperoni Pizza");
+            }else if(pizza == 3){
+                System.out.println("Hawaiian Pizza");
+            }else {
+                System.out.println("Invalid Pizza Variant");
+            }
+        }else if(menu.equals("2")){
+            System.out.println("---Variants---");
+            System.out.println("1. TLC");
+            System.out.println("2. Double Patty");
+            System.out.println("3. Cheese");
+            System.out.print("Variant choice: ");
+            int burger = input.nextInt();
+            if(burger == 1){
+                System.out.println("TLC Burger");
+            }else if(burger == 2){
+                System.out.println("Double Patty Burger");
+            }else if(burger == 3){
+                System.out.println("Cheese Burger");
+            }else {
+                System.out.println("Invalid Burger Variant");}
+        }else if(menu.equals("3")){
+            System.out.println("---Variants---");
+            System.out.println("1. BBQ");
+            System.out.println("2. Cheese");
+            System.out.println("3. Salt");
+            System.out.print("Variant choice: ");
+            int fries = input.nextInt();           
+            if(fries == 1){
+                System.out.println("BBQ Fries");
+            }else if(fries == 2){
+                System.out.println("Cheese Fries");
+            }else if(fries == 3){
+                System.out.println("Salt Fries");
+            }else {
+                System.out.println("Invalid Fries Variant"); 
+            }           
+        }else{
+            System.out.println("Invalid Menu Choice"); 
+        }
+    }
+}
