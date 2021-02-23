@@ -1,2 +1,2 @@
-# Activity9ArraySearch
-This is only my Programming Activity at School of my first semester in college
+
+This is only my Programming Activities that I've learned on College
