@@ -6,7 +6,7 @@ public class FinalExam {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
+        System.out.println("Tangalin, Michael Jan R. | 1-BSIT-1");
         String names[] = {"AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG", "HHH", "III", "JJJ"};
         int age[] = {9, 10, 7, 5, 3, 1, 2, 4, 6, 8};
         String course[] = {"CS", "IT", "CS", "IT", "Law", "Med", "Engr", "Med", "Engr", "Law"};
@@ -53,15 +53,6 @@ public class FinalExam {
                         }
                     }
                 }
-                for (int i = 0; i < names.length; i++) {
-                    String Records = names[i] + age[i] + course[i] + yearlevel[i];
-                    if (searchVal.equals("ALL") | Records.contains(searchVal)) {
-                        System.out.println(names[i] + "\t" + age[i]
-                                + "\t" + course[i]
-                                + "\t" + yearlevel[i]);
-                    }
-                }
-                System.out.println("-----END OF RECORD-----");
             } else if (sortOrder.equals("Descending")) {
                 for (int x = 0; x < names.length; x++) {
                     for (int i = 0; i < names.length - 1; i++) {
@@ -84,16 +75,6 @@ public class FinalExam {
                         }
                     }
                 }
-
-                for (int i = 0; i < names.length; i++) {
-                    String Records = names[i] + age[i] + course[i] + yearlevel[i];
-                    if (searchVal.equals("ALL") | Records.contains(searchVal)) {
-                        System.out.println(names[i] + "\t" + age[i]
-                                + "\t" + course[i]
-                                + "\t" + yearlevel[i]);
-                    }
-                }
-                System.out.println("-----END OF RECORD-----");
             }
         } else if (sortType.equals("YEAR")) {
             if (sortOrder.equals("Ascending")) {
@@ -118,15 +99,6 @@ public class FinalExam {
                         }
                     }
                 }
-                for (int i = 0; i < names.length; i++) {
-                    String Records = names[i] + age[i] + course[i] + yearlevel[i];
-                    if (searchVal.equals("ALL") | Records.contains(searchVal)) {
-                        System.out.println(names[i] + "\t" + age[i]
-                                + "\t" + course[i]
-                                + "\t" + yearlevel[i]);
-                    }
-                }
-                System.out.println("-----END OF RECORD-----");
             } else if (sortOrder.equals("Descending")) {
                 for (int x = 0; x < names.length; x++) {
                     for (int i = 0; i < names.length - 1; i++) {
@@ -149,16 +121,16 @@ public class FinalExam {
                         }
                     }
                 }
-                for (int i = 0; i < names.length; i++) {
-                    String Records = names[i] + age[i] + course[i] + yearlevel[i];
-                    if (searchVal.equals("ALL") | Records.contains(searchVal)) {
-                        System.out.println(names[i] + "\t" + age[i]
-                                + "\t" + course[i]
-                                + "\t" + yearlevel[i]);
-                    }
-                }
-                System.out.println("-----END OF RECORD-----");
             }
         }
+        for (int i = 0; i < names.length; i++) {
+            String Records = names[i] + age[i] + course[i] + yearlevel[i];
+            if (searchVal.equals("ALL") | Records.contains(searchVal)) {
+                System.out.println(names[i] + "\t" + age[i]
+                        + "\t" + course[i]
+                        + "\t" + yearlevel[i]);
+            }
+        }
+        System.out.println("-----END OF RECORD-----");
     }
 }
