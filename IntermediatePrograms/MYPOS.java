@@ -30,6 +30,7 @@ public class Activity3POS {
         for (int i = 0; i < BurgerVariation.length; i++) {
             PrintThisOneLine((i + 1) + ". " + BurgerVariation[i] + "..............." + "₱ " + BurgerPrice[i]);
         }
+        
     }
 
     static void PastaSubMenu() {
@@ -47,12 +48,12 @@ public class Activity3POS {
     static void SwitchMenu(int FoodMenu) {
         switch (FoodMenu) {
             case 1:
-                PrintThisOneLine("You Chosed: " + FoodChoice[1 - 1] + " Section");
+                PrintThisOneLine("---" + FoodChoice[1 - 1] + " Section" + "---");
                 BurgerSubMenu();               
                 int BurgerVariant = inputnum("Burger Variant ");
                 switch (BurgerVariant) {
                     case 1:
-                        PrintThisOneLine("You Chosed: " + BurgerVariation[1 - 1] + " Burger");
+                        PrintThisOneLine("Your Choice: " + BurgerVariation[1 - 1] + " Burger");
                         int CheeseBQty = inputnum("Quantity # ");
                         double TotalCheeseBVariant = MultiplyQTY(BurgerPrice[BurgerVariant - 1], CheeseBQty);
                         PrintThisOneLine("Total: " + "₱ " + TotalCheeseBVariant);
@@ -61,7 +62,7 @@ public class Activity3POS {
                         PrintThisOneLine("Your Change: " + "₱ " + CBChange);
                         break;
                     case 2:
-                        PrintThisOneLine("You Chosed: " + BurgerVariation[2 - 1] + " Burger");
+                        PrintThisOneLine("Your Choice: " + BurgerVariation[2 - 1] + " Burger");
                         int DPVariantQty = inputnum("Quantity # ");
                         double DoublePVariantTotal = MultiplyQTY(BurgerPrice[BurgerVariant - 1], DPVariantQty);
                         PrintThisOneLine("Total: " + "₱ " + DoublePVariantTotal);
@@ -70,7 +71,7 @@ public class Activity3POS {
                         PrintThisOneLine("Your Change: " + "₱ " + DPChange);
                         break;
                     case 3:
-                        PrintThisOneLine("You Chosed: " + BurgerVariation[3 - 1] + " Burger");
+                        PrintThisOneLine("Your Choice: " + BurgerVariation[3 - 1] + " Burger");
                         int TLCVariantQty = inputnum("Quantity # ");
                         double TLCVariantTotal = MultiplyQTY(BurgerPrice[BurgerVariant - 1], TLCVariantQty);
                         PrintThisOneLine("Total: " + "₱ " + TLCVariantTotal);
@@ -81,12 +82,12 @@ public class Activity3POS {
                 }
                 break;
             case 2:
-                PrintThisOneLine("You Chosed: " + FoodChoice[2 - 1] + " Section");
+                PrintThisOneLine("---" + FoodChoice[2 - 1] + " Section"+ "---");
                 PastaSubMenu();
                 int PastaVariant = inputnum("Pasta Variant ");
                 switch (PastaVariant) {
                     case 1:
-                        PrintThisOneLine("You Chosed: " + PastaVariation[1 - 1] + " Pasta");
+                        PrintThisOneLine("Your Choice: " + PastaVariation[1 - 1] + " Pasta");
                         int SpaghettiQty = inputnum("Quantity # ");
                         double TotalSpaghettiVariant = MultiplyQTY(PastaPrice[PastaVariant - 1], SpaghettiQty);
                         PrintThisOneLine("Total: " + "₱ " + TotalSpaghettiVariant);
@@ -95,7 +96,7 @@ public class Activity3POS {
                         PrintThisOneLine("Your Change: " + "₱ " + SpaghettiChange);
                         break;
                     case 2:
-                        PrintThisOneLine("You Chosed: " + PastaVariation[2 - 1] + " Pasta");
+                        PrintThisOneLine("Your Choice: " + PastaVariation[2 - 1] + " Pasta");
                         int CarbonaraQty = inputnum("Quantity # ");
                         double TotalCarbonaraVariant = MultiplyQTY(PastaPrice[PastaVariant - 1], CarbonaraQty);
                         PrintThisOneLine("Total: " + "₱ " + TotalCarbonaraVariant);
@@ -104,7 +105,7 @@ public class Activity3POS {
                         PrintThisOneLine("Your Change: " + "₱ " + CarbonaraChange);
                         break;
                     case 3:
-                        PrintThisOneLine("You Chosed: " + PastaVariation[3 - 1] + " Pasta");
+                        PrintThisOneLine("Your Choice: " + PastaVariation[3 - 1] + " Pasta");
                         int LasagnaQty = inputnum("Quantity # ");
                         double TotalLasagnaVariant = MultiplyQTY(PastaPrice[PastaVariant - 1], LasagnaQty);
                         PrintThisOneLine("Total: " + "₱ " + TotalLasagnaVariant);
@@ -115,12 +116,12 @@ public class Activity3POS {
                 }
                 break;
             case 3:
-                PrintThisOneLine("You Chosed: " + FoodChoice[3 - 1] + " Section");
+                PrintThisOneLine("---" + FoodChoice[3 - 1] + " Section" + "---");
                 DrinksSubMenu();
                 int DrinksVariant = inputnum("Drinks Variant ");
                 switch (DrinksVariant) {
                     case 1:
-                        PrintThisOneLine("You Chosed: " + DrinksVariation[1 - 1] + " Drinks");
+                        PrintThisOneLine("Your Choice: " + DrinksVariation[1 - 1] + " Drinks");
                         int FantaQty = inputnum("Quantity # ");
                         double TotalFantaVariant = MultiplyQTY(DrinksPrice[DrinksVariant - 1], FantaQty);
                         PrintThisOneLine("Total: " + "₱ " + TotalFantaVariant);
@@ -129,7 +130,7 @@ public class Activity3POS {
                         PrintThisOneLine("Your Change: " + "₱ " + FantaChange);
                         break;
                     case 2:
-                        PrintThisOneLine("You Chosed: " + DrinksVariation[2 - 1] + " Drinks");
+                        PrintThisOneLine("Your Choice: " + DrinksVariation[2 - 1] + " Drinks");
                         int CokeQty = inputnum("Quantity # ");
                         double TotalCokeVariant = MultiplyQTY(DrinksPrice[DrinksVariant - 1], CokeQty);
                         PrintThisOneLine("Total: " + "₱ " + TotalCokeVariant);
@@ -138,7 +139,7 @@ public class Activity3POS {
                         PrintThisOneLine("Your Change: " + "₱ " + CokeChange);
                         break;
                     case 3:
-                        PrintThisOneLine("You Chosed: " + DrinksVariation[3 - 1] + " Drinks");
+                        PrintThisOneLine("Your Choice: " + DrinksVariation[3 - 1] + " Drinks");
                         int HeinekenQty = inputnum("Quantity # ");
                         double TotalHeinekenVariant = MultiplyQTY(DrinksPrice[DrinksVariant - 1], HeinekenQty);
                         PrintThisOneLine("Total: " + "₱ " + TotalHeinekenVariant);
@@ -149,7 +150,7 @@ public class Activity3POS {
                 }
                 break;
             default:
-                PrintThisOneLine("Invalid Choice");
+                PrintThisOneLine("---Invalid Choice---");
                 break;
         }
     }
