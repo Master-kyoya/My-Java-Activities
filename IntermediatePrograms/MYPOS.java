@@ -14,9 +14,18 @@ public class Activity3POS {
 
     public static void main(String[] args) {
         PrintThisOneLine("Tangalin, Michael Jan R. | 1-BSEMC-1");
+        PrintThisOneLine("***************************************");
+        PrintThisOneLine("PattyHub, Inc. \n" + "May I take your Order?");
+        PrintThisOneLine("***************************************");
         MainMenu();
-        int productID = inputnum("Food Choice # " );
-        SwitchMenu(productID);
+        int pID = inputs("Food Choice");
+        int choices = InputMenuVariation(pID);
+        int QTY = inputs("Quantity#");
+        double estimatedTotal = MultiplyQTY(choices - 1, QTY, pID);
+        PrintThisOneLine("Total: " + "₱ " + estimatedTotal);
+        int amountMoney = inputs("Enter Amount");
+        double change = Subtraction(amountMoney, estimatedTotal);
+        PrintThisOneLine("Your change: ₱ " + change);
     }
 
     static void MainMenu() {
@@ -26,133 +35,31 @@ public class Activity3POS {
         }
     }
 
-    static void BurgerSubMenu() {
-        for (int i = 0; i < BurgerVariation.length; i++) {
-            PrintThisOneLine((i + 1) + ". " + BurgerVariation[i] + "..............." + "₱ " + BurgerPrice[i]);
-        }
-        
-    }
+    static int InputMenuVariation(int productID) {
 
-    static void PastaSubMenu() {
-        for (int i = 0; i < PastaVariation.length; i++) {
-            PrintThisOneLine((i + 1) + ". " + PastaVariation[i] + "..............." + "₱ " + PastaPrice[i]);
-        }
-    }
-
-    static void DrinksSubMenu() {
-        for (int i = 0; i < DrinksVariation.length; i++) {
-            PrintThisOneLine((i + 1) + ". " + DrinksVariation[i] + "..............." + "₱ " + DrinksPrice[i]);
-        }
-    }
-
-    static void SwitchMenu(int FoodMenu) {
-        switch (FoodMenu) {
+        switch (productID) {
             case 1:
                 PrintThisOneLine("---" + FoodChoice[1 - 1] + " Section" + "---");
-                BurgerSubMenu();               
-                int BurgerVariant = inputnum("Burger Variant ");
-                switch (BurgerVariant) {
-                    case 1:
-                        PrintThisOneLine("Your Choice: " + BurgerVariation[1 - 1] + " Burger");
-                        int CheeseBQty = inputnum("Quantity # ");
-                        double TotalCheeseBVariant = MultiplyQTY(BurgerPrice[BurgerVariant - 1], CheeseBQty);
-                        PrintThisOneLine("Total: " + "₱ " + TotalCheeseBVariant);
-                        int CashForCheeseBVariant = inputnum("Enter Amount");
-                        double CBChange = Subtraction(CashForCheeseBVariant, TotalCheeseBVariant);
-                        PrintThisOneLine("Your Change: " + "₱ " + CBChange);
-                        break;
-                    case 2:
-                        PrintThisOneLine("Your Choice: " + BurgerVariation[2 - 1] + " Burger");
-                        int DPVariantQty = inputnum("Quantity # ");
-                        double DoublePVariantTotal = MultiplyQTY(BurgerPrice[BurgerVariant - 1], DPVariantQty);
-                        PrintThisOneLine("Total: " + "₱ " + DoublePVariantTotal);
-                        int CashForDoublePVariant = inputnum("Enter Amount");
-                        double DPChange = Subtraction(CashForDoublePVariant, DoublePVariantTotal);
-                        PrintThisOneLine("Your Change: " + "₱ " + DPChange);
-                        break;
-                    case 3:
-                        PrintThisOneLine("Your Choice: " + BurgerVariation[3 - 1] + " Burger");
-                        int TLCVariantQty = inputnum("Quantity # ");
-                        double TLCVariantTotal = MultiplyQTY(BurgerPrice[BurgerVariant - 1], TLCVariantQty);
-                        PrintThisOneLine("Total: " + "₱ " + TLCVariantTotal);
-                        int CashForTLCVariant = inputnum("Enter Amount");
-                        double TLCChange = Subtraction(CashForTLCVariant, TLCVariantTotal);
-                        PrintThisOneLine("Your Change: " + "₱ " + TLCChange);
-                        break;
+                for (int i = 0; i < BurgerVariation.length; i++) {
+                    PrintThisOneLine((i + 1) + ". " + BurgerVariation[i] + "..............." + BurgerPrice[i]);
                 }
                 break;
             case 2:
-                PrintThisOneLine("---" + FoodChoice[2 - 1] + " Section"+ "---");
-                PastaSubMenu();
-                int PastaVariant = inputnum("Pasta Variant ");
-                switch (PastaVariant) {
-                    case 1:
-                        PrintThisOneLine("Your Choice: " + PastaVariation[1 - 1] + " Pasta");
-                        int SpaghettiQty = inputnum("Quantity # ");
-                        double TotalSpaghettiVariant = MultiplyQTY(PastaPrice[PastaVariant - 1], SpaghettiQty);
-                        PrintThisOneLine("Total: " + "₱ " + TotalSpaghettiVariant);
-                        int CashForSpaghettiVariant = inputnum("Enter Amount");
-                        double SpaghettiChange = Subtraction(CashForSpaghettiVariant, TotalSpaghettiVariant);
-                        PrintThisOneLine("Your Change: " + "₱ " + SpaghettiChange);
-                        break;
-                    case 2:
-                        PrintThisOneLine("Your Choice: " + PastaVariation[2 - 1] + " Pasta");
-                        int CarbonaraQty = inputnum("Quantity # ");
-                        double TotalCarbonaraVariant = MultiplyQTY(PastaPrice[PastaVariant - 1], CarbonaraQty);
-                        PrintThisOneLine("Total: " + "₱ " + TotalCarbonaraVariant);
-                        int CashForCarbonaraVariant = inputnum("Enter Amount");
-                        double CarbonaraChange = Subtraction(CashForCarbonaraVariant, TotalCarbonaraVariant);
-                        PrintThisOneLine("Your Change: " + "₱ " + CarbonaraChange);
-                        break;
-                    case 3:
-                        PrintThisOneLine("Your Choice: " + PastaVariation[3 - 1] + " Pasta");
-                        int LasagnaQty = inputnum("Quantity # ");
-                        double TotalLasagnaVariant = MultiplyQTY(PastaPrice[PastaVariant - 1], LasagnaQty);
-                        PrintThisOneLine("Total: " + "₱ " + TotalLasagnaVariant);
-                        int CashForLasagnaVariant = inputnum("Enter Amount");
-                        double LasagnaChange = Subtraction(CashForLasagnaVariant, TotalLasagnaVariant);
-                        PrintThisOneLine("Your Change: " + "₱ " + LasagnaChange);
-                        break;
+                PrintThisOneLine("---" + FoodChoice[2 - 1] + " Section" + "---");
+                for (int i = 0; i < PastaVariation.length; i++) {
+                    PrintThisOneLine((i + 1) + ". " + PastaVariation[i] + "..............." + PastaPrice[i]);
                 }
                 break;
             case 3:
                 PrintThisOneLine("---" + FoodChoice[3 - 1] + " Section" + "---");
-                DrinksSubMenu();
-                int DrinksVariant = inputnum("Drinks Variant ");
-                switch (DrinksVariant) {
-                    case 1:
-                        PrintThisOneLine("Your Choice: " + DrinksVariation[1 - 1] + " Drinks");
-                        int FantaQty = inputnum("Quantity # ");
-                        double TotalFantaVariant = MultiplyQTY(DrinksPrice[DrinksVariant - 1], FantaQty);
-                        PrintThisOneLine("Total: " + "₱ " + TotalFantaVariant);
-                        int CashForFantaVariant = inputnum("Enter Amount");
-                        double FantaChange = Subtraction(CashForFantaVariant, TotalFantaVariant);
-                        PrintThisOneLine("Your Change: " + "₱ " + FantaChange);
-                        break;
-                    case 2:
-                        PrintThisOneLine("Your Choice: " + DrinksVariation[2 - 1] + " Drinks");
-                        int CokeQty = inputnum("Quantity # ");
-                        double TotalCokeVariant = MultiplyQTY(DrinksPrice[DrinksVariant - 1], CokeQty);
-                        PrintThisOneLine("Total: " + "₱ " + TotalCokeVariant);
-                        int CashForCokeVariant = inputnum("Enter Amount");
-                        double CokeChange = Subtraction(CashForCokeVariant, TotalCokeVariant);
-                        PrintThisOneLine("Your Change: " + "₱ " + CokeChange);
-                        break;
-                    case 3:
-                        PrintThisOneLine("Your Choice: " + DrinksVariation[3 - 1] + " Drinks");
-                        int HeinekenQty = inputnum("Quantity # ");
-                        double TotalHeinekenVariant = MultiplyQTY(DrinksPrice[DrinksVariant - 1], HeinekenQty);
-                        PrintThisOneLine("Total: " + "₱ " + TotalHeinekenVariant);
-                        int CashForHeinekenVariant = inputnum("Enter Amount");
-                        double HeinekenChange = Subtraction(CashForHeinekenVariant, TotalHeinekenVariant);
-                        PrintThisOneLine("Your Change: " + "₱ " + HeinekenChange);
-                        break;
+                for (int i = 0; i < DrinksVariation.length; i++) {
+                    PrintThisOneLine((i + 1) + ". " + DrinksVariation[i] + "..............." + DrinksPrice[i]);
                 }
                 break;
-            default:
-                PrintThisOneLine("---Invalid Choice---");
-                break;
         }
+        PrintThisOne(FoodChoice[productID - 1] + " Variant: ");
+        int variantCode = inNum();
+        return variantCode;
     }
 
     static int inNum() {
@@ -160,18 +67,30 @@ public class Activity3POS {
         return input.nextInt();
     }
 
-    static int inputnum(String msg) {
+    static int inputs(String msg) {
         PrintThisOne(msg + ": ");
         int val = inNum();
         return val;
     }
 
-    static double MultiplyQTY(int Price, int Quantity) {
-        int total = Price * Quantity;
+    static int MultiplyQTY(int Variation, int Quantity, int Product) {
+        int total = 0;
+        switch (Product) {
+            case 1:
+                total = BurgerPrice[Variation] * Quantity;
+                break;
+            case 2:
+                total = PastaPrice[Variation] * Quantity;
+                break;
+            case 3:
+                total = DrinksPrice[Variation] * Quantity;
+                break;
+        }
         return total;
     }
 
     static double Subtraction(double Cash, double Total) {
+
         double change = Cash - Total;
         return change;
     }
@@ -184,3 +103,4 @@ public class Activity3POS {
         System.out.println(Message);
     }
 }
+
