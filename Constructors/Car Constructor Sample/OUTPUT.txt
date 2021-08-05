@@ -1,0 +1,25 @@
+------------------------CAR BRANDS----------------------------
+BRAND: TOYOTA
+Color: Gray
+Model: 2014
+Displacement: 2500
+Car Type: SUV
+Fuel Capacity: 45.0
+Fuel Burnrate: 20.5
+
+Details:
+Travel Distance for TOYOTA is 922.50
+For TOYOTA to travel for 5.25 hours, it takes 107.62 Liter
+
+BRAND: HONDA
+Color: RED
+Model: 2009
+Displacement: 1300
+Car Type: SEDAN
+Fuel Capacity: 30.0
+Fuel Burnrate: 10.5
+
+Details:
+Travel Distance for HONDA is 315.00
+For HONDA to travel for 5.25 hours, it takes 55.12 Liter
+--------------------------------END----------------------------
