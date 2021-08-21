@@ -18,7 +18,7 @@ public class Main
 	                figure += (" "); //one blank space
 	            }
 	        }
-	        for(c = 1 ; c >= add; c++)
+	        for(c = 1 ; c >= add; c--)
 	        {
 	            figure += "@";
 	        }
