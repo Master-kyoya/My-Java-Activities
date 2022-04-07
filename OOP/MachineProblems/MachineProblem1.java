@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
-
 import javax.swing.*;
 
 
@@ -224,29 +223,37 @@ public class MachineProblem1 {
 				
 				double TransGrade = Double.parseDouble(fg.getText());
 				
-				if(TransGrade < 75.99) {
+				if(TransGrade <= 74.99) {
 					Transmutedvalue = 5.0;
 					RemarksResult = "Failed";
-				}else if(TransGrade >= 76 && TransGrade <= 78.99) {
-					RemarksResult = "Passed";
+				}else if(TransGrade >= 75 && TransGrade <= 75.99) {
+					RemarksResult = "Passing Mercy";
 					Transmutedvalue = 3.0;
-				}else if(TransGrade >= 81 && TransGrade <= 84.99) {
-					RemarksResult = "High Passed";
-					Transmutedvalue = 2.75;
-				}else if(TransGrade >= 85 && TransGrade <= 88.99) {
+				}else if(TransGrade >= 76 && TransGrade <= 78.99) {
 					RemarksResult = "Satisfactory";
+					Transmutedvalue = 2.75;
+				}else if(TransGrade >= 79 && TransGrade <= 81.99) {
+					RemarksResult = "Very Satisfactory";
 					Transmutedvalue = 2.50;
-				}else if(TransGrade >= 89 && TransGrade <= 91.99) {
+				}else if(TransGrade >= 82 && TransGrade <= 84.99) {
+					RemarksResult = "Very Satisfactory";
+					Transmutedvalue = 2.25;
+				}else if(TransGrade >= 85 && TransGrade <= 87.99) {
 					RemarksResult = "Very Satisfactory";
 					Transmutedvalue = 2.0;
-				}else if(TransGrade >= 92 && TransGrade <= 95.99) {
-					RemarksResult = "Good";
+				}else if(TransGrade >= 88 && TransGrade <= 90.99) {
+					RemarksResult = "Very Good";
 					Transmutedvalue = 1.75;
-				}else if (TransGrade >= 96 && TransGrade <= 99.99) {
+				}else if (TransGrade >= 91 && TransGrade <= 93.99) {
 					RemarksResult = "Very Good";
 					Transmutedvalue = 1.50;
-				}else {
-					if (TransGrade >= 100) {
+				}else if(TransGrade >= 94 && TransGrade <= 96.99) {
+					RemarksResult = "Excellent";
+					Transmutedvalue = 1.25;
+				}
+				
+				else {
+					if (TransGrade >= 97 && TransGrade <= 100) {
 						RemarksResult = "Excellent";
 						Transmutedvalue = 1.0;
 					}
